@@ -42,6 +42,7 @@ class Persona:
         if len(cedula) == 10:
             self._cedula = cedula
 
+
     @property
     def email(self):
         return self._email
@@ -72,6 +73,9 @@ class Persona:
     def __str__(self):
         # return f'Persona [nombre: {self._nombre}, apellido: {self._apellido}, email: {self._email}]'
         return f'Persona: {self.__dict__.__str__()}'
+
+    # def __str__(self):
+    #     return f'Persona: {type(self)}'
     '''
     Display name
     '''
@@ -83,7 +87,6 @@ class Persona:
 
     def obtener_nombre_mostrar(self):
         return f'{self._nombre} {self._apellido}'
-
 
 
 if __name__ == '__main__':
