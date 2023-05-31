@@ -1,17 +1,13 @@
-from persona import Persona
+from Herencia.persona import Persona
 
 class Cliente(Persona):
+    contador_cliente = 0
     def __init__(self, cedula:str=None, email:str=None, nombre:str=None, apellido:str=None, genero:str=None
                  , ocupacion:str=None, id:int=None, fechaRegistro:str=None, vip:bool=False):
-        # self._nombre = nombre
-        # self._apellido = apellido
-        # self._cedula = cedula
-        # self._email = email
-        # self._genero = genero
-        # self._ocupacion = ocupacion
         super().__init__(cedula=cedula, email=email, nombre=nombre, apellido=apellido, genero=genero
                          , ocupacion=ocupacion)
-        self._id = id
+        Cliente.contador_cliente += 1
+        self._id = Cliente.contador_cliente
         self._fechaRegistro = fechaRegistro
         self._vip = vip
 
@@ -20,9 +16,9 @@ class Cliente(Persona):
     def id(self):
         return self._id
 
-    @id.setter
-    def id(self, id):
-        self_id = id
+    # @id.setter
+    # def id(self, id):
+    #     self_id = id
 
     @property
     def fechaRegistro(self):
@@ -50,7 +46,10 @@ class Cliente(Persona):
 
 if __name__ == '__main__':
     objCliente = Cliente(nombre='Luis', genero='Masculino', ocupacion='Estudiante', apellido='Perez'
-                             , email='lp@mail.com', id=1, fechaRegistro='24/05/2023', vip=True)
+                             , email='lp@mail.com', fechaRegistro='24/05/2023', vip=True)
     print(objCliente)
-    objCliente.cedula='piedras'
-    print(objCliente)
+    # objCliente.cedula='1234567890'
+    # print(objCliente)
+
+    cliente2 = Cliente()
+    print(cliente2)

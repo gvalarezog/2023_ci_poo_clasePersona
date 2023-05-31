@@ -1,22 +1,25 @@
-from persona import Persona
+from Herencia.persona import Persona
 
 
 
 class Empleado(Persona):
-    def __init__(self, id:int=None, sueldo:float=0.0, cedula:str='', email:str=None, nombre:str=None, apellido:str=None
+    contador_empleado = 0
+    def __init__(self, sueldo:float=0.0, cedula:str='', email:str=None, nombre:str=None, apellido:str=None
                  , genero:str=None, ocupacion:str=None):
         super().__init__(cedula=cedula, email=email, nombre=nombre, apellido=apellido, genero=genero
                          , ocupacion=ocupacion)
-        self._id = id
+        # Empleado.contador_empleado = Empleado.contador_empleado + 1
+        Empleado.contador_empleado += 1
+        self._id = Empleado.contador_empleado
         self._sueldo = sueldo
 
     @property
     def id(self):
         return self._id
 
-    @id.setter
-    def id(self, id):
-        self._id = id
+    # @id.setter
+    # def id(self, id):
+    #     self._id = id
 
     @property
     def sueldo(self):
@@ -31,8 +34,9 @@ class Empleado(Persona):
 
 if __name__ == '__main__':
     objEmpleado = Empleado(nombre='Luis', genero='Masculino', ocupacion='Estudiante', apellido='Perez',
-                             email='lp@mail.com', id=1, sueldo=1000)
-    print(objEmpleado.__str__())
-    objEmpleado.cedula = '1234567890'
-    objEmpleado.ocupacion = 'Licenciado'
+                             email='lp@mail.com', sueldo=1000)
     print(objEmpleado)
+    empleado2 = Empleado()
+    print(empleado2)
+    empleado3 = Empleado()
+    print(empleado3)

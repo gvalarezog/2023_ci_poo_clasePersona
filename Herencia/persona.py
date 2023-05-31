@@ -1,9 +1,13 @@
 '''
 Clase Persona permite crear objetos de tipo persona
 '''
+from abc import ABC, abstractmethod
 
 
-class Persona:
+#ABC-> Abstract Base Clase
+
+
+class Persona(ABC):
     '''
     Constructor o metodo que inicializa una objeto
     '''
@@ -70,6 +74,8 @@ class Persona:
     '''
     Redefinición del metodo STR
     '''
+
+    @abstractmethod
     def __str__(self):
         # return f'Persona [nombre: {self._nombre}, apellido: {self._apellido}, email: {self._email}]'
         return f'Persona: {self.__dict__.__str__()}'
@@ -90,32 +96,33 @@ class Persona:
 
 
 if __name__ == '__main__':
-    objetoPersona1 = Persona(nombre='Luis', genero='Masculino', ocupacion='Estudiante', apellido='Perez',
-                             email='lp@mail.com')
-    print(objetoPersona1.__str__())
-
-
-    objetoPersona1._nombre = 'Carlos' # no es correcto
-    objetoPersona1._email = 'cp@mail.com' # no es correcto
-    print(objetoPersona1._nombre) # no es correcto
-
-
-    objetoPersona1.nombre = 'Felipe' # si es correcto
-    print(objetoPersona1.nombre) # si es correcto
-    print(objetoPersona1.apellido)
-    objetoPersona1.email = 'fp@mail.com'
-    print(objetoPersona1.email)
-
-
-    print(objetoPersona1.__str__())
-    print('*'.center(100,'*'))
-
-
-    objP2 = Persona(cedula='0123456799')
-    print(objP2)
-
-    objP3 = Persona(cedula=123456799)
-    print(objP3)
-    objP3.cedula = '0123456789'
-    print(objP3)
+    pass
+    # objetoPersona1 = Persona(nombre='Luis', genero='Masculino', ocupacion='Estudiante', apellido='Perez',
+    #                          email='lp@mail.com')
+    # print(objetoPersona1.__str__())
+    #
+    #
+    # objetoPersona1._nombre = 'Carlos' # no es correcto
+    # objetoPersona1._email = 'cp@mail.com' # no es correcto
+    # print(objetoPersona1._nombre) # no es correcto
+    #
+    #
+    # objetoPersona1.nombre = 'Felipe' # si es correcto
+    # print(objetoPersona1.nombre) # si es correcto
+    # print(objetoPersona1.apellido)
+    # objetoPersona1.email = 'fp@mail.com'
+    # print(objetoPersona1.email)
+    #
+    #
+    # print(objetoPersona1.__str__())
+    # print('*'.center(100,'*'))
+    #
+    #
+    # objP2 = Persona(cedula='0123456799')
+    # print(objP2)
+    #
+    # objP3 = Persona(cedula=123456799)
+    # print(objP3)
+    # objP3.cedula = '0123456789'
+    # print(objP3)
 
