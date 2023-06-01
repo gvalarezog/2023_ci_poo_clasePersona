@@ -8,6 +8,14 @@ class Rectangulo(FiguraGeometrica):
     def __str__(self):
         return f'Rectangulo [alto = {self.alto}, ancho = {self.ancho}]'
 
+    def calcular_area(self):
+        return self.alto * self.ancho
+
+    def calcular_perimetro(self):
+        return self.alto * 2 + self.ancho * 2
+
 if __name__ == '__main__':
     r1 =  Rectangulo(ancho=4, alto=6)
     print(r1)
+    print(f'El área del Rectangulo es: {r1.calcular_area()}')
+    print(f'El perimetro del Rectangulo es: {r1.calcular_perimetro()}')
