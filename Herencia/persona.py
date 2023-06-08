@@ -80,8 +80,8 @@ class Persona(ABC):
         # return f'Persona [nombre: {self._nombre}, apellido: {self._apellido}, email: {self._email}]'
         return f'Persona: {self.__dict__.__str__()}'
 
-    # def __str__(self):
-    #     return f'Persona: {type(self)}'
+    def __str__(self):
+        return f'Persona: {type(self)}'
     '''
     Display name
     '''
@@ -93,6 +93,8 @@ class Persona(ABC):
 
     def obtener_nombre_mostrar(self):
         return f'{self._nombre} {self._apellido}'
+
+
 
 
 if __name__ == '__main__':

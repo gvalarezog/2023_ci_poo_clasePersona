@@ -3,8 +3,17 @@ import math
 from figura_geometrica import  FiguraGeometrica
 
 class Circunferencia(FiguraGeometrica):
-    def __init__(self, radio:float=0.0):
+    def __init__(self, radio:float=0.0, diametro=0.0):
         super().__init__(alto=radio)
+        self._diametro = diametro
+
+    @property
+    def diametro(self):
+        return self._diametro
+
+    @diametro.setter
+    def diametro(self, diametro):
+        self._diametro = diametro
 
 
     def __str__(self):

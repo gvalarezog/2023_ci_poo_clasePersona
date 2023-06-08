@@ -40,3 +40,5 @@ if __name__ == '__main__':
     print(empleado2)
     empleado3 = Empleado()
     print(empleado3)
+
+    objEmpleado.enviar_correo('Prueba', 'Esto es una prueba')
